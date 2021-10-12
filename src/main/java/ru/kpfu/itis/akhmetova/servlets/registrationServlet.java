@@ -11,11 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.List;
 
-@WebServlet(name = "SignUpServlet", urlPatterns = "/signedUsers")
-public class SignUpServlet extends HttpServlet {
+@WebServlet(name = "registrationServlet", urlPatterns = "/registration")
+public class registrationServlet extends HttpServlet {
 
     private UsersRepository usersRepository;
 
@@ -28,16 +27,16 @@ public class SignUpServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<User> users = usersRepository.findAll();
         req.setAttribute("usersFromServer", users);
-        RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher("/signedUsers.jsp");
+        RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher("/jsp/registration.jsp");
         dispatcher.forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
+        String email = req.getParameter("email");//мы берем параметры
         String password = req.getParameter("password");
-        LocalDate birthdate = LocalDate.parse(req.getParameter("birthdate"));//мы берем параметры
-        User user = new User(name, password, birthdate);
+        User user = new User(name, email, password);
 
         usersRepository.save(user);
         doGet(req, resp);

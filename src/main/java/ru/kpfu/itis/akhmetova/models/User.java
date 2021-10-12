@@ -1,16 +1,14 @@
 package ru.kpfu.itis.akhmetova.models;
 
-import java.time.LocalDate;
-
 public class User {
     public String name;
+    public String email;
     public String password;
-    public LocalDate birthdate;
 
-    public User(String name, String password, LocalDate birthdate) {
+    public User(String name, String email, String password) {
         this.name = name;
+        this.email = email;
         this.password = password;
-        this.birthdate = birthdate;
     }
 
     public String getName() {
@@ -29,11 +27,11 @@ public class User {
         this.password = password;
     }
 
-    public LocalDate getBirthdate() {
-        return birthdate;
+    public String getLogin() {
+        return email;
     }
 
-    public void setBirthdate(LocalDate birthdate) {
-        this.birthdate = birthdate;
+    public void setBirthdate(String email) {
+        this.email = email;
     }
 }

@@ -1,5 +1,9 @@
 $(document).ready(function(){
+    $('#registration').on('click', function (){
+        location.href = "/registration";
+    });
+
     $('#authorization').on('click', function (){
-        window.location.href = "../java/ru.kpfu.itis.akhmetova/servlets/SignUpServlet.java";
+        location.href = "/authorization";
     });
 });

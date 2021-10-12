@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: akhme
+  Date: 12.10.2021
+  Time: 9:46
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Scientific Science</title>
-    <link rel="stylesheet" href="/css/mainPage.css">
-    <script src="/jsLib/jquery-3.6.0.min.js"></script>
+    <title>Profile</title>
 </head>
 <body>
 <header>
@@ -12,8 +16,9 @@
     <div class="nav-bar">
         <h1>Scientific Science</h1>
         <div class="nav-bar-innerflex">
-            <input type="button" value="Вход" id="authorization">
-            <input type="button" value="Зарегистрироваться" id="registration">
+            <%--нужна кнопка выхода их страницы пользователя--%>
+<%--            <input type="button" value="Вход" id="authorization">--%>
+<%--            <input type="button" value="Зарегистрироваться" id="registration">--%>
         </div>
     </div>
 
@@ -32,7 +37,5 @@
         </div>
     </div>
 </header>
-
-<script src="registration.js"></script>
 </body>
 </html>

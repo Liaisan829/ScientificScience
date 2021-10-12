@@ -38,19 +38,18 @@ a:hover {
 .nav-bar-innerflex {
     display: flex;
     flex-direction: row;
-    padding-right: 40px;
 }
 
-.nav-bar-innerflex input {
-    background-color: transparent;
-    outline: none;
-    height: 50px;
-    margin-top: 40px;
-    border: none;
-    width: 115px;
-    font-size: 30px;
-    color: white;
-}
+/*.nav-bar-innerflex input {*/
+/*    background-color: transparent;*/
+/*    outline: none;*/
+/*    height: 50px;*/
+/*    margin-top: 40px;*/
+/*    border: none;*/
+/*    width: 115px;*/
+/*    font-size: 30px;*/
+/*    color: white;*/
+/*}*/
 
 .menu-search {
     background-color: #151538;
@@ -94,4 +93,3 @@ a:hover {
     color: white;
     font-size: 20px;
 }
-

@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: akhme
+  Date: 12.10.2021
+  Time: 9:44
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Scientific Science</title>
-    <link rel="stylesheet" href="/css/mainPage.css">
-    <script src="/jsLib/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/mainPage.css">
+    <script src="../jsLib/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <header>
@@ -33,6 +39,14 @@
     </div>
 </header>
 
+<main>
+
+
+</main>
+
+<footer>
+
+</footer>
 <script src="registration.js"></script>
 </body>
 </html>
