@@ -40,6 +40,6 @@ public class registrationServlet extends HttpServlet {
 
         usersRepository.save(user);
         doGet(req, resp);
-
+        req.getServletContext().getRequestDispatcher("/").forward(req, resp);
     }
 }

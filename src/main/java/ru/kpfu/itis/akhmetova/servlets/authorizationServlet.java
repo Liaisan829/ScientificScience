@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "authorizationServlet", urlPatterns = "/authorization")
-public class authorizationServlet  extends HttpServlet {
+public class authorizationServlet extends HttpServlet {
 
     private UsersRepository usersRepository;
 
@@ -34,9 +34,11 @@ public class authorizationServlet  extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
-        if(usersRepository.isExist(email, password)){
+        if (usersRepository.isExist(email, password)) {
             HttpSession session = req.getSession();
-            session.setAttribute("user", email);
+            session.setAttribute("user", email);//на сервере создали сессию и дали ей атрибут юзер и ее атрибут маил
+            req.getServletContext().getRequestDispatcher("/").forward(req, resp);
         }
+        resp.sendRedirect(req.getContextPath() + "/authorization");
     }
 }
