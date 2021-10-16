@@ -1,14 +1,30 @@
 package ru.kpfu.itis.akhmetova.models;
 
 public class User {
+    public int id;
     public String name;
     public String email;
     public String password;
+
+    public User(int id, String name, String email, String password) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
 
     public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -27,11 +43,11 @@ public class User {
         this.password = password;
     }
 
-    public String getLogin() {
+    public String getEmail() {
         return email;
     }
 
-    public void setBirthdate(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 }

@@ -36,8 +36,8 @@ public class authorizationServlet extends HttpServlet {
 
         if (usersRepository.isExist(email, password)) {
             HttpSession session = req.getSession();
-            session.setAttribute("user", email);//на сервере создали сессию и дали ей атрибут юзер и ее атрибут маил
-            req.getServletContext().getRequestDispatcher("/").forward(req, resp);
+            session.setAttribute("userEmail", email);//на сервере создали сессию и дали ей атрибут юзер и ее значение маил
+            req.getServletContext().getRequestDispatcher("/main").forward(req, resp);
         }
         resp.sendRedirect(req.getContextPath() + "/authorization");
     }
