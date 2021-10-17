@@ -27,7 +27,7 @@ a:hover {
     justify-content: space-between;
 }
 
-.nav-bar h1, h3 {
+.nav-bar h1 {
     color: white;
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
@@ -35,6 +35,22 @@ a:hover {
     font-size: 50px;
 }
 
+.nav-bar-innerflex {
+    display: flex;
+    flex-direction: row;
+    padding-right: 40px;
+}
+
+.nav-bar-innerflex input {
+    background-color: transparent;
+    outline: none;
+    height: 50px;
+    margin-top: 40px;
+    border: none;
+    width: 115px;
+    font-size: 30px;
+    color: white;
+}
 
 .menu-search {
     background-color: #151538;

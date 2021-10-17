@@ -10,17 +10,13 @@
 <head>
     <title>Scientific Science</title>
     <link rel="stylesheet" href="../css/mainPage.css">
-    <script src="../jsLib/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <header>
 
     <div class="nav-bar">
         <h1>Scientific Science</h1>
-        <div class="nav-bar-innerflex">
-            <input type="button" value="Вход" id="authorization">
-            <input type="button" value="Зарегистрироваться" id="registration">
-        </div>
+        <h3>Hello, {userName}</h3>
     </div>
 
     <div class="menu-search">
@@ -40,13 +36,11 @@
 </header>
 
 <main>
-
-
+    <h1>This page opens after registration or authorization </h1>
 </main>
 
 <footer>
 
 </footer>
-<script src="registration.js"></script>
 </body>
 </html>

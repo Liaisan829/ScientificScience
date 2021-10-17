@@ -12,7 +12,7 @@ public class PostgresConnectionHelper {
     public static final Logger LOGGER = LoggerFactory.getLogger(PostgresConnectionHelper.class);
 
     private static Connection connection;
-    private static final String DRIVER = "org.postgres.Driver";
+    //private static final String DRIVER = "org.postgresql.Driver";
     public static final String URL = "jdbc:postgresql://localhost:5432/science";
     public static final String USER = "postgres";
     public static final String PASSWORD = "lasyon777";
@@ -20,7 +20,7 @@ public class PostgresConnectionHelper {
     public static Connection getConnection(){
         if(connection == null){
             try {
-                Class.forName(DRIVER);
+                Class.forName("org.postgresql.Driver");
                 connection = DriverManager.getConnection(URL, USER, PASSWORD);
             } catch (ClassNotFoundException | SQLException e) {
                 LOGGER.error("Failed connect to db", e);

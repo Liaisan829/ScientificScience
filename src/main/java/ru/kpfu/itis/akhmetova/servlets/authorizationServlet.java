@@ -1,8 +1,5 @@
 package ru.kpfu.itis.akhmetova.servlets;
 
-import ru.kpfu.itis.akhmetova.repository.UsersRepository;
-import ru.kpfu.itis.akhmetova.repository.UsersRepositoryInMemoryImpl;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,13 +11,6 @@ import java.io.IOException;
 
 @WebServlet(name = "authorizationServlet", urlPatterns = "/authorization")
 public class authorizationServlet extends HttpServlet {
-
-    private UsersRepository usersRepository;
-
-    @Override
-    public void init() throws ServletException {
-        this.usersRepository = new UsersRepositoryInMemoryImpl();//несмотря на то что заново создаем usersRepozitory это ниче не меняет потому что внутри него сингл тон обьект и он все равно один
-    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -34,11 +24,11 @@ public class authorizationServlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
-        if (usersRepository.isExist(email, password)) {
+//        if (usersRepository.isExist(email, password)) {помоему в бд проверять что такой пользователь есть
             HttpSession session = req.getSession();
             session.setAttribute("userEmail", email);//на сервере создали сессию и дали ей атрибут юзер и ее значение маил
             req.getServletContext().getRequestDispatcher("/main").forward(req, resp);
-        }
+//        }
         resp.sendRedirect(req.getContextPath() + "/authorization");
     }
 }

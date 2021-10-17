@@ -24,7 +24,7 @@ public class UserDaoImpl implements Dao<User> {
     public List<User> getAll() {
         try{
             Statement statement = connection.createStatement();
-            String sql = "SELECT * FROM registeredUsers";
+            String sql = "SELECT * FROM author";
             ResultSet resultSet = statement.executeQuery(sql);
 
             List<User> userList = new ArrayList<>();
@@ -40,16 +40,16 @@ public class UserDaoImpl implements Dao<User> {
             return userList;
         } catch (SQLException throwables) {
             LOGGER.warn("Failed execute getAll query", throwables);
-            return null;
+            return new ArrayList<>();
         }
     }
 
     @Override
     public void save(User user) {
-        String sql = "INSERT INTO registeredUsers (name, email, password) VALUES (?, ?, ?);";
+        String sql = "INSERT INTO author (name, email, password) VALUES (?, ?, ?)";
 
         try{
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);//позволяет предотвращать sql инъекции
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getEmail());
             preparedStatement.setString(3, user.getPassword());

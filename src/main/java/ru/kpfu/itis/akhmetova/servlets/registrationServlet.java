@@ -1,5 +1,7 @@
 package ru.kpfu.itis.akhmetova.servlets;
 
+import ru.kpfu.itis.akhmetova.dao.Dao;
+import ru.kpfu.itis.akhmetova.dao.impl.UserDaoImpl;
 import ru.kpfu.itis.akhmetova.models.User;
 
 import javax.servlet.RequestDispatcher;
@@ -13,10 +15,10 @@ import java.io.IOException;
 @WebServlet(name = "registrationServlet", urlPatterns = "/registration")
 public class registrationServlet extends HttpServlet {
 
+    private static Dao<User> dao = new UserDaoImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        List<User> users = usersRepository.findAll(); брать из бд
-//        req.setAttribute("usersFromServer", users);
         RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher("/jsp/registration.jsp");
         dispatcher.forward(req, resp);
     }
@@ -28,8 +30,8 @@ public class registrationServlet extends HttpServlet {
         String password = req.getParameter("password");
         User user = new User(name, email, password);
 
-//        usersRepository.save(user); сохранять в бд
-        doGet(req, resp);
-        req.getServletContext().getRequestDispatcher("/").forward(req, resp);
+        //сохранять в бд
+        dao.save(user);
+        resp.sendRedirect(req.getContextPath() + "/main");
     }
 }

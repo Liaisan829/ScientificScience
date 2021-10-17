@@ -1,6 +1,6 @@
 package ru.kpfu.itis.akhmetova.models;
 
-public class User {
+public class User {//моделька для бд
     public int id;
     public String name;
     public String email;

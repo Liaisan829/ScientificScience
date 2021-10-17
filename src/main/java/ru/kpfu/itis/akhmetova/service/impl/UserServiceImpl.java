@@ -11,13 +11,14 @@ import java.util.stream.Collectors;
 
 public class UserServiceImpl implements Service<UserDto> {
 
-    private final Dao dao = new UserDaoImpl();
+    private final Dao<User> dao = new UserDaoImpl();
 
     @Override
     public UserDto get(int id) {
         return null;
     }
-//преобразует модельку из бд в класс юзердто что потом может быть использовано в сервлете
+    //преобразует модельку из бд в класс юзердто что потом может быть использовано в сервлете
+
     @Override
     public List<UserDto> getAll() {
         List<User> userList = dao.getAll();

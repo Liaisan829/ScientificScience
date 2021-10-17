@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>registration</title>
-    <link rel="stylesheet" href="/css/registration.css" type="text/css">
+    <link rel="stylesheet" href="../css/registration.css" type="text/css">
 </head>
 <body>
 <div class="form-style-2">
@@ -15,7 +15,7 @@
     <form action="/registration" method="post">
         <label for="name">
             <input class="input-field" type="text" id="name" name="name" placeholder="Name">
-<%--            name для параметра пост запроса нужен так что в сервелете и здесь пишем одинаково--%>
+            <%--name для параметра пост запроса нужен так что в сервелете и здесь пишем одинаково--%>
         </label>
         <label for="email">
             <input class="input-field" type="email" id="email" name="email" placeholder="name@email.com">
@@ -26,28 +26,6 @@
         <input type="submit" value="Sign up">
     </form>
 </div>
-
-<%--<%--%>
-<%--    ArrayList<User> users = (ArrayList) request.getAttribute("usersFromServer");--%>
-<%--%>--%>
-<%--<div class = "form-style-2">--%>
-<%--    <div class = "form-style-2-heading">Already registered</div>--%>
-<%--    <table>--%>
-<%--        <tr>--%>
-<%--            <th>User name</th>--%>
-<%--            <th>Birth Date</th>--%>
-<%--        </tr>--%>
-<%--        <%for (User user : users) {%>--%>
-<%--        <tr>--%>
-<%--            <td><%= user.getName()%>--%>
-<%--            </td>--%>
-<%--            <td><%= user.getBirthdate()%>--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-<%--        <% }%>--%>
-
-<%--    </table>--%>
-<%--</div>--%>
 
 </body>
 </html>
