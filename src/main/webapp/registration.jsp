@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>registration</title>
-    <link rel="stylesheet" href="../css/registration.css" type="text/css">
+    <link rel="stylesheet" href="css/registration.css" type="text/css">
 </head>
 <body>
 <div class="form-style-2">
@@ -28,18 +28,16 @@
 
     <form action="/registration" method="post">
         <label for="name">Name:
-            <input class="input-field" type="text" id="name" name="name"/>
+            <input class="input-field" type="text" id="name" name="name">
             <%--name для параметра пост запроса нужен так что в сервелете и здесь пишем одинаково--%>
         </label>
         <label for="email"> Email:
-            <input class="input-field" type="email" id="email" name="email"/>
+            <input class="input-field" type="email" id="email" name="email">
         </label>
         <label for="password"> Password:
             <input class="input-field" type="password" id="password" name="password">
         </label>
-<%--        <div class="input_wrap">--%>
-<%--            <label> Remember me:</label> <input type="checkbox" name="remember"/>--%>
-<%--        </div>--%>
+
         <input type="submit" value="Sign up"/>
     </form>
 </div>

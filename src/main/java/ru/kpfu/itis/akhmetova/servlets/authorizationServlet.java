@@ -20,7 +20,7 @@ public class authorizationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher("/jsp/authorization.jsp");
+        RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher(req.getContextPath() + "/authorization.jsp");
         dispatcher.forward(req, resp);
     }
 
@@ -47,7 +47,7 @@ public class authorizationServlet extends HttpServlet {
             resp.addCookie(emailCookie);
             resp.addCookie(passCookie);
             resp.addCookie(rememberCookie);
-            resp.sendRedirect(req.getContextPath() + "/main");
+            resp.sendRedirect("/");
 
         } else {
             LOGGER.warn("пароль проверку не прошел");

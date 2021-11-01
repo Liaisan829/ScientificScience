@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,29 +8,7 @@
 </head>
 <body>
 <header>
-
-    <div class="nav-bar">
-        <h1>Scientific Science</h1>
-        <div class="nav-bar-innerflex">
-            <input type="button" value="Вход" id="authorization">
-            <input type="button" value="Зарегистрироваться" id="registration">
-        </div>
-    </div>
-
-    <div class="menu-search">
-        <div class="menu-flex">
-            <a href="#">Health</a>
-            <a href="#">Science</a>
-            <a href="#">Home|Garden</a>
-            <a href="#">Tech</a>
-            <a href="#">Animal</a>
-            <a href="#">Culture</a>
-        </div>
-        <div class="search-flex">
-            <p><input type="search" name="q" class="search-field" placeholder="Поиск по сайту">
-                <input type="submit" class="searchButton" value="Найти"></p>
-        </div>
-    </div>
+    <jsp:include page="header.jsp"/>
 </header>
 
 <main>
@@ -45,7 +23,7 @@
             <h1>Our Top Reads</h1>
             <div class="top-reads-articles">
                 <a href="#">The Republic of Nirivia: A <br/> Magical Micronation That<br/> Semi-exists on Lake Superior</a>
-                <br/><!--ведут каждая на свою страницу-->
+                <br/>
                 <a href="#">The Orionid Meteor Shower <br/> Is Back - Here`s What You <br/> Need To Know</a><br/>
                 <a href="#">Why Do British Lawyers Still <br/> Wear Wigs?</a><br/>
             </div>
@@ -130,32 +108,7 @@
 </main>
 
 <footer>
-    <div class="footer">
-
-        <h1>Scientific Science</h1>
-
-        <div class="info">
-            <p>Company</p><br/>
-            <a href="#">About</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Help</a>
-            <a href="#">Sitemap</a>
-        </div>
-
-        <div class="info">
-            <p>Information</p><br/>
-            <a href="#">Ad Choices</a>
-            <a href="#">Terms</a>
-            <a href="#">Reprints</a>
-            <a href="#">Privacy Policy</a>
-        </div>
-
-        <div class="info">
-            <p>Explore</p><br/>
-            <a href="#">Quizzes</a>
-            <a href="#">Video</a>
-        </div>
-    </div>
+    <jsp:include page="footer.jsp"/>
 </footer>
 <script src="ral.js"></script>
 </body>

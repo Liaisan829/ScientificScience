@@ -16,7 +16,7 @@
 </header>
 <main>
     <h1></h1>
-    <img src="../images/health-left-mini-article.jpg" alt="health-img">
+    <img src="images/health-left-mini-article.jpg" alt="health-img">
     <h1> article content is here</h1>
     <button>Сохранить</button>
 </main>

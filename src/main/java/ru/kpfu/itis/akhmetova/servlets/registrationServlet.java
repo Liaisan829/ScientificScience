@@ -17,7 +17,7 @@ public class registrationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher("/jsp/registration.jsp");
+        RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher(req.getContextPath() + "/registration.jsp");
         dispatcher.forward(req, resp);
     }
 
@@ -44,6 +44,6 @@ public class registrationServlet extends HttpServlet {
         resp.addCookie(emailCookie);
         resp.addCookie(passCookie);
         resp.addCookie(rememberCookie);
-        resp.sendRedirect(req.getContextPath() + "/main");
+        resp.sendRedirect("/");
     }
 }

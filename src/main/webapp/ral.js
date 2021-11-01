@@ -10,8 +10,4 @@ $(document).ready(function () {
     $('#logout').on('click', function () {
         location.href = "/";
     });
-
-    $('.read-button').on('click', function (){
-        location.href = "/article";
-    });
 });
