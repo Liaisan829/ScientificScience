@@ -9,9 +9,7 @@
 </div>
 
 
-<div class="content1">
-    <div class="content"><@content></@content></div>
-</div>
+<div class="content"><@content></@content></div>
 
 </body>
 

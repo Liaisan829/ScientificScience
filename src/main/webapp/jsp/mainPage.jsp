@@ -13,34 +13,104 @@
 </head>
 <body>
 <header>
-
-    <div class="nav-bar">
-        <h1>Scientific Science</h1>
-        <h3>Hello, {userName}</h3>
-    </div>
-
-    <div class="menu-search">
-        <div class="menu-flex">
-            <a href="#">Health</a>
-            <a href="#">Science</a>
-            <a href="#">Home|Garden</a>
-            <a href="#">Tech</a>
-            <a href="#">Animal</a>
-            <a href="#">Culture</a>
-        </div>
-        <div class="search-flex">
-            <p><input type="search" name="q" class="search-field" placeholder="Поиск по сайту">
-                <input type="submit" class="searchButton" value="Найти"></p>
-        </div>
-    </div>
+    <jsp:include page="header.jsp"/>
 </header>
-
 <main>
-    <h1>This page opens after registration or authorization </h1>
+    <div class="top-reads">
+        <div class="top-reads-img">
+            <img src="../images/top-reads-img.jpg" alt="top-reads-img">
+        </div>
+
+        <div class="top-reads-block">
+            <h1>Our Top Reads</h1>
+            <div class="top-reads-articles">
+                <a href="#">The Republic of Nirivia: A <br/> Magical Micronation That<br/> Semi-exists on Lake Superior</a>
+                <br/><!--ведут каждая на свою страницу-->
+                <a href="#">The Orionid Meteor Shower <br/> Is Back - Here`s What You <br/> Need To Know</a><br/>
+                <a href="#">Why Do British Lawyers Still <br/> Wear Wigs?</a><br/>
+            </div>
+        </div>
+    </div>
+
+    <div class="big-articles">
+
+        <div class="health-big-article">
+            <div class=article-header><h3>HEALTH</h3></div>
+            <div class="health-mini-articles">
+                <div class="mini-article">
+                    <img src="../images/health-left-mini-article.jpg" alt="left-big-article">
+                    <a href="#"><br/>If you want sustainable clothes, focus <br/>on the farms</a>
+                    <p> Regenerative farming is trending in <br/>fashion, but does it get to the root of the <br/>clothing
+                        industry's problem?</p>
+                </div>
+
+                <div class="mini-article">
+                    <img src="../images/health-left-mini-article.jpg" alt="left-big-article">
+                    <a href="#"><br/>If you want sustainable clothes, focus <br/>on the farms</a>
+                    <p> Regenerative farming is trending in <br/>fashion, but does it get to the root of the <br/>clothing
+                        industry's problem?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="science-big-article">
+            <div class=article-header><h3>SCIENCE</h3></div>
+            <div class="science-mini-articles">
+                <div class="mini-article">
+                    <img src="../images/science-left-mini-article.jpg" alt="left-big-article">
+                    <a href="#"><br/>If you want sustainable clothes, focus <br/>on the farms</a>
+                    <p> Regenerative farming is trending in <br/>fashion, but does it get to the root of the <br/>clothing
+                        industry's problem?</p>
+                </div>
+
+                <div class="mini-article">
+                    <img src="../images/science-left-mini-article.jpg" alt="left-big-article">
+                    <a href="#"><br/>If you want sustainable clothes, focus <br/>on the farms</a>
+                    <p> Regenerative farming is trending in <br/>fashion, but does it get to the root of the <br/>clothing
+                        industry's problem?</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="four-mini-articles">
+        <div class="mini-article">
+            <div class=article-header><h3>HOME|GARDEN</h3></div>
+            <img src="../images/science-left-mini-article.jpg" alt="left-big-article">
+            <a href="#"><br/>If you want sustainable clothes, focus <br/>on the farms</a>
+            <p> Regenerative farming is trending in <br/>fashion, but does it get to the root of the <br/>clothing
+                industry's problem?</p>
+        </div>
+
+        <div class="mini-article">
+            <div class=article-header><h3>TECH</h3></div>
+            <img src="../images/science-left-mini-article.jpg" alt="left-big-article">
+            <a href="#"><br/>If you want sustainable clothes, focus <br/>on the farms</a>
+            <p> Regenerative farming is trending in <br/>fashion, but does it get to the root of the <br/>clothing
+                industry's problem?</p>
+        </div>
+
+        <div class="mini-article">
+            <div class=article-header><h3>ANIMAL</h3></div>
+            <img src="../images/science-left-mini-article.jpg" alt="left-big-article">
+            <a href="#"><br/>If you want sustainable clothes, focus <br/>on the farms</a>
+            <p> Regenerative farming is trending in <br/>fashion, but does it get to the root of the <br/>clothing
+                industry's problem?</p>
+        </div>
+
+        <div class="mini-article">
+            <div class=article-header><h3>CULTURE</h3></div>
+            <img src="../images/science-left-mini-article.jpg" alt="left-big-article">
+            <a href="#"><br/>If you want sustainable clothes, focus <br/>on the farms</a>
+            <p> Regenerative farming is trending in <br/>fashion, but does it get to the root of the <br/>clothing
+                industry's problem?</p>
+        </div>
+    </div>
 </main>
 
 <footer>
-
+    <jsp:include page="footer.jsp"/>
 </footer>
 </body>
 </html>

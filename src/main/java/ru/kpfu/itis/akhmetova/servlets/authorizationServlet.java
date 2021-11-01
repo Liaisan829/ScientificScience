@@ -1,16 +1,22 @@
 package ru.kpfu.itis.akhmetova.servlets;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import ru.kpfu.itis.akhmetova.helper.PasswordHelper;
+import ru.kpfu.itis.akhmetova.service.UserService;
+import ru.kpfu.itis.akhmetova.service.impl.UserServiceImpl;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 
 @WebServlet(name = "authorizationServlet", urlPatterns = "/authorization")
 public class authorizationServlet extends HttpServlet {
+
+    public static final Logger LOGGER = LoggerFactory.getLogger(authorizationServlet.class);
+    public static final UserService userService = new UserServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -20,15 +26,32 @@ public class authorizationServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //проверка логина и пароля на соответствие и перенаправляем на глвную страницу без вход и регистрация, вместо них можно имя пользователя показать и нажав на нее пользователь переходит на страницу свою
+        //проверка логина и пароля на соответствие и перенаправляем на главную страницу без вход и регистрация, вместо них можно имя пользователя показать и нажав на нее пользователь переходит на страницу свою
         String email = req.getParameter("email");
         String password = req.getParameter("password");
+        String hashPassword = PasswordHelper.encrypt(password);
+        String remember = req.getParameter("remember");
 
-//        if (usersRepository.isExist(email, password)) {помоему в бд проверять что такой пользователь есть
+        if (userService.getUserByEmail(email).equals(hashPassword)) {
+            LOGGER.info("пароль прошел проверку");
             HttpSession session = req.getSession();
             session.setAttribute("userEmail", email);//на сервере создали сессию и дали ей атрибут юзер и ее значение маил
-            req.getServletContext().getRequestDispatcher("/main").forward(req, resp);
-//        }
-        resp.sendRedirect(req.getContextPath() + "/authorization");
+            session.setMaxInactiveInterval(60 * 60);
+
+            Cookie emailCookie = new Cookie("userEmail", email);
+            Cookie passCookie = new Cookie("userPassword", password);
+            Cookie rememberCookie = new Cookie("userRemember", remember);
+            emailCookie.setMaxAge(24 * 60 * 60);
+            passCookie.setMaxAge(24*60*60);
+            rememberCookie.setMaxAge(24*60*60);
+            resp.addCookie(emailCookie);
+            resp.addCookie(passCookie);
+            resp.addCookie(rememberCookie);
+            resp.sendRedirect(req.getContextPath() + "/main");
+
+        } else {
+            LOGGER.warn("пароль проверку не прошел");
+            resp.sendRedirect("/authorization");//трабла с редиректом, 500 ошибка
+        }
     }
 }

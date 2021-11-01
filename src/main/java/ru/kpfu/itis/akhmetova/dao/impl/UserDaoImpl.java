@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.kpfu.itis.akhmetova.dao.Dao;
 import ru.kpfu.itis.akhmetova.helper.PostgresConnectionHelper;
+import ru.kpfu.itis.akhmetova.models.Article;
 import ru.kpfu.itis.akhmetova.models.User;
 
 import java.sql.*;
@@ -16,19 +17,33 @@ public class UserDaoImpl implements Dao<User> {
     private final Connection connection = PostgresConnectionHelper.getConnection();
 
     @Override
-    public User get(int id) {
-        return null;
+    public String getUserByEmail(String email) {
+        try {
+            String sql = "SELECT password FROM usualUser WHERE email = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, email);//число - номер вопросика
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+              return resultSet.getString("password");
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return "";
     }
 
     @Override
-    public List<User> getAll() {
-        try{
+    public List<User> getAllUsers() {
+        try {
             Statement statement = connection.createStatement();
-            String sql = "SELECT * FROM author";
+            String sql = "SELECT * FROM usualuser";
             ResultSet resultSet = statement.executeQuery(sql);
 
             List<User> userList = new ArrayList<>();
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 User user = new User(
                         resultSet.getInt("id"),
                         resultSet.getString("name"),
@@ -46,9 +61,9 @@ public class UserDaoImpl implements Dao<User> {
 
     @Override
     public void save(User user) {
-        String sql = "INSERT INTO author (name, email, password) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO usualuser (name, email, password) VALUES (?, ?, ?)";
 
-        try{
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);//позволяет предотвращать sql инъекции
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getEmail());
@@ -57,5 +72,29 @@ public class UserDaoImpl implements Dao<User> {
         } catch (SQLException throwables) {
             LOGGER.warn("Failed to save new user", throwables);
         }
+    }
+
+    @Override
+    public Article getArticle() {
+        try {
+            Statement statement = connection.createStatement();
+            String sql = "SELECT * FROM article";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            Article article = null;
+           if(resultSet.next()){
+               article = new Article(
+                       resultSet.getInt("id"),
+                       resultSet.getString("subject"),
+                       resultSet.getString("title"),
+                       resultSet.getString("content")
+               );
+           }
+           return article;
+
+        } catch (SQLException throwables) {
+            LOGGER.warn("Failed execute getAll query", throwables);
+        }
+        return null;
     }
 }

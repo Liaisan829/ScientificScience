@@ -1,9 +1,0 @@
-$(document).ready(function(){
-    $('#registration').on('click', function (){
-        location.href = "/registration";
-    });
-
-    $('#authorization').on('click', function (){
-        location.href = "/authorization";
-    });
-});

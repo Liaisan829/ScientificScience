@@ -1,17 +1,28 @@
 <html lang="en">
 <#include "base.ftl">
-<#macro title> Registered Users</#macro>
+<head>
+    <title><#macro title>Registered Users</#macro></title>
+</head>
+<body>
 
-<#macro content>
-    Hello,
-    <#if registeredUsers??>
-        <#if registeredUsers?has_content>
-            <#list registeredUsers as u>
-                ${u.name} ${u.email}
-            </#list>!
+<main>
+    <img src="images/health-left-mini-article.jpg" alt="health-img">
+
+    <#macro content>
+        Hello,
+        <#if article??>
+        <#--            <#if users?has_content>-->
+        <#--                <#list users as u>-->
+            <li>${article.title} ${article.content}</li>
+        <#--                </#list>!-->
+        <#--            </#if>-->
         </#if>
-    </#if>
-</#macro>
+    </#macro>
+    <button>Save article</button>
+</main>
+</body>
+
+
 </html>
 
 
