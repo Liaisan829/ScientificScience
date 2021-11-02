@@ -17,7 +17,7 @@ public class registrationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher(req.getContextPath() + "/registration.jsp");
+        RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher("/registration.jsp");
         dispatcher.forward(req, resp);
     }
 
@@ -29,7 +29,7 @@ public class registrationServlet extends HttpServlet {
         String remember = req.getParameter("remember");
         User user = new User(name, email, password);
 
-        usi.save(user);
+        usi.saveUser(user);
 
         HttpSession session = req.getSession();
         session.setAttribute("userEmail", email);//на сервере создали сессию и дали ей атрибут юзер и ее значение маил

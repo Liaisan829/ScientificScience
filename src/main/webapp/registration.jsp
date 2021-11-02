@@ -31,10 +31,10 @@
             <input class="input-field" type="text" id="name" name="name">
             <%--name для параметра пост запроса нужен так что в сервелете и здесь пишем одинаково--%>
         </label>
-        <label for="email"> Email:
+        <label for="email"> Почта:
             <input class="input-field" type="email" id="email" name="email">
         </label>
-        <label for="password"> Password:
+        <label for="password"> Пароль (хотя бы одна заглавная буква и цифра):
             <input class="input-field" type="password" id="password" name="password">
         </label>
 

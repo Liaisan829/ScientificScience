@@ -15,5 +15,6 @@ public class AjaxHelloServlet extends HttpServlet {
         resp.setContentType("text/plain");
         resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write(String.format("Hello! %s", System.currentTimeMillis()));
+        resp.sendRedirect("/article.ftl");
     }
 }

@@ -11,7 +11,12 @@
 </header>
 
 <main>
-    <h1>Сохранённые статьи</h1>
+    <div class="container">
+
+        <h1>Сохранённые статьи</h1>
+        <a href="/addArticle">Предложить свою статью</a>
+    </div>
+
 </main>
 <footer>
     <jsp:include page="footer.jsp"/>

@@ -7,13 +7,16 @@
     <script>
         $(document).on("click", "#ajax-button", function () {
             $.get("/ajax/hello", function (responseText) {
-                $("#ajax-div").text(responseText);
+                $("#ajax-answer-div").text(responseText);
             });
         });
     </script>
 </head>
 <body>
-<div id="ajax-div">место куда будет записываться ответ
+<div id="ajax-answer-div">место куда будет записываться ответ
+
+</div>
+<div>
 
 </div>
 <form>

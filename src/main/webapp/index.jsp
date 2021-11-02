@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Scientific Science</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/slider.css">
     <script src="/jsLib/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -13,7 +14,6 @@
 
 <main>
 
-    <p>сделать модалку как только нажал куда то что нужно сначала зарегаться </p>
     <div class="top-reads">
         <div class="top-reads-img">
             <img src="images/top-reads-img.jpg" alt="top-reads-img">
@@ -105,11 +105,29 @@
                 industry's problem?</p>
         </div>
     </div>
+
+    <div class="container">
+        <h1>Хотите почитать печатный вариант? Выбирай книжку!</h1>
+
+        <div class="slider-container">
+            <div class="slider-images">
+                <img src="images/ideas.png" alt="ideas">
+                <img src="images/plisov.png" alt="plisov">
+                <img src="images/theories.jpg" alt="theories">
+                <img src="images/stiven.jpg" alt="stiven">
+                <img src="images/cat.jpg" alt="cat">
+            </div>
+        </div>
+
+        <button class="slider-prev">Предыдущая</button>
+        <button class="slider-next">Следующая</button>
+    </div>
 </main>
 
 <footer>
     <jsp:include page="footer.jsp"/>
 </footer>
 <script src="ral.js"></script>
+<script src="slider.js"></script>
 </body>
 </html>

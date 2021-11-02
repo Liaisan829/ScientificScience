@@ -2,16 +2,15 @@ package ru.kpfu.itis.akhmetova.dao.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.kpfu.itis.akhmetova.dao.Dao;
+import ru.kpfu.itis.akhmetova.dao.UserDao;
 import ru.kpfu.itis.akhmetova.helper.PostgresConnectionHelper;
-import ru.kpfu.itis.akhmetova.models.Article;
 import ru.kpfu.itis.akhmetova.models.User;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDaoImpl implements Dao<User> {
+public class UserDaoImpl implements UserDao<User> {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserDaoImpl.class);
 
     private final Connection connection = PostgresConnectionHelper.getConnection();
@@ -60,7 +59,7 @@ public class UserDaoImpl implements Dao<User> {
     }
 
     @Override
-    public void save(User user) {
+    public void saveUser(User user) {
         String sql = "INSERT INTO usualuser (name, email, password) VALUES (?, ?, ?)";
 
         try {
@@ -74,27 +73,5 @@ public class UserDaoImpl implements Dao<User> {
         }
     }
 
-    @Override
-    public Article getArticle() {
-        try {
-            Statement statement = connection.createStatement();
-            String sql = "SELECT * FROM article";
-            ResultSet resultSet = statement.executeQuery(sql);
 
-            Article article = null;
-           if(resultSet.next()){
-               article = new Article(
-                       resultSet.getInt("id"),
-                       resultSet.getString("subject"),
-                       resultSet.getString("title"),
-                       resultSet.getString("content")
-               );
-           }
-           return article;
-
-        } catch (SQLException throwables) {
-            LOGGER.warn("Failed execute getAll query", throwables);
-        }
-        return null;
-    }
 }

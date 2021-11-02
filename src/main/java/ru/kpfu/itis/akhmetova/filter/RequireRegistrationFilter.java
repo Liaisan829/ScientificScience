@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "RequireRegistrationFilter", urlPatterns = {"/", "/article"})
+@WebFilter(filterName = "RequireRegistrationFilter", urlPatterns = "/article")
 public class RequireRegistrationFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
     }
@@ -18,10 +18,9 @@ public class RequireRegistrationFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
 
-        String uri = req.getRequestURI();
         HttpSession session = req.getSession(false);
-        if (session == null && !uri.contains("registration")) {
-            resp.sendRedirect("registration");
+        if (session == null) {
+            resp.sendRedirect("/registration.jsp");
         } else {
             filterChain.doFilter(request, response);
         }
