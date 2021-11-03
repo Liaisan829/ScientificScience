@@ -1,0 +1,28 @@
+body {
+    margin: 0 auto;
+    width: auto;
+}
+
+header {
+    margin: 0 auto;
+    padding: 0;
+}
+
+main {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.health-mini-articles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.mini-article a {
+    border: 1px solid #2B2B5C;
+    background-color: #2B2B5C;
+}
+
+

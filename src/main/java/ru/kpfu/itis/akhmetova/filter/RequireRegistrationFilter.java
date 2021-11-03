@@ -19,11 +19,13 @@ public class RequireRegistrationFilter implements Filter {
         HttpServletResponse resp = (HttpServletResponse) response;
 
         HttpSession session = req.getSession(false);
-        if (session == null) {
+        Object email = session.getAttribute("userEmail");
+        if (email == null) {
             resp.sendRedirect("/registration.jsp");
         } else {
             filterChain.doFilter(request, response);
         }
+
     }
 
     public void destroy() {

@@ -1,4 +1,4 @@
-package ru.kpfu.itis.akhmetova;
+package ru.kpfu.itis.akhmetova.handler;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

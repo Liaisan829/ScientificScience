@@ -1,0 +1,193 @@
+body {
+    margin: 0 auto;
+    width: auto;
+}
+
+header {
+    margin: 0 auto;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+    transition: transform 100ms;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+.nav-bar {
+    background-color: #2B2B5C;
+    padding: 0 40px 0 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-bar h1 {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.menu-search {
+    background-color: #151538;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px 0 40px;
+}
+
+.menu-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+
+.menu-flex a {
+    padding-right: 45px;
+    font-size: 25px;
+}
+
+.search-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+
+}
+
+.search-flex input {
+    height: 30px;
+}
+
+.search-field{
+    background-color: white;
+    border: none;
+    width: 200px;
+}
+
+.searchButton{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+
+.top-reads{
+    text-align: center;
+    width: auto;
+    margin: 20px 130px 0 0;
+    display: flex;
+    flex-direction:  row;
+}
+
+.top-reads-img{
+    width: 70%;
+}
+
+.top-reads-block{
+    border: 3px solid #151538;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.top-reads-block h3{
+    font-weight: bold;
+    color: #2B2B5C;
+}
+
+.top-reads-articles{
+    margin-top: 30px;
+}
+
+.top-reads-articles a{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 25px;
+    font-weight: bold;
+    color: #2B2B5C;
+    cursor: pointer;
+}
+
+.big-articles{
+    margin-left: 40px;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.big-articles a{
+    color: black;
+    font-weight: bold;
+}
+
+.health-big-article{
+    font-size: 20px;
+}
+
+.article-header{
+    background-color: #2B2B5C;
+    color: white;
+}
+
+.health-mini-articles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.science-big-article {
+    font-size: 20px;
+}
+
+.science-mini-articles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.four-mini-articles{
+    margin-left: 40px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer{
+    margin: 0 auto;
+    background-color: #2B2B5C;
+    padding: 20px 70px 60px 40px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.footer p{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.footer a{
+    font-size: 20px;
+}
+
+.footer h1{
+    font-size: 40px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}

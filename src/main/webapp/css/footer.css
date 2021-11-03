@@ -1,0 +1,28 @@
+.footer{
+    margin: 0 auto;
+    background-color: #2B2B5C;
+    padding: 20px 70px 60px 40px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.footer p{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.footer a{
+    font-size: 20px;
+}
+
+.footer h1{
+    font-size: 40px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}

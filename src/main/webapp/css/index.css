@@ -1,0 +1,115 @@
+
+.top-reads{
+    text-align: center;
+    width: auto;
+    margin: 20px 130px 0 0;
+    display: flex;
+    flex-direction:  row;
+}
+
+.top-reads-img{
+    width: 80%;
+}
+
+.top-reads-block{
+    border: 3px solid #151538;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.top-reads-block h1{
+    font-weight: bold;
+    color: #2B2B5C;
+}
+
+.top-reads-articles{
+    margin-top: 30px;
+}
+
+.top-reads-articles a{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 25px;
+    font-weight: bold;
+    color: #2B2B5C;
+    cursor: pointer;
+}
+
+.big-articles{
+    margin-left: 40px;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.big-articles a{
+    color: black;
+    font-weight: bold;
+}
+
+.health-big-article{
+    font-size: 20px;
+}
+
+.article-header{
+    background-color: #2B2B5C;
+    color: white;
+}
+
+.health-mini-articles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.science-big-article {
+    font-size: 20px;
+}
+
+.science-mini-articles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.four-mini-articles{
+    margin-left: 40px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer{
+    margin: 0 auto;
+    background-color: #2B2B5C;
+    padding: 20px 70px 60px 40px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.footer p{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.footer a{
+    font-size: 20px;
+}
+
+.footer h1{
+    font-size: 40px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+

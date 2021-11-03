@@ -7,9 +7,6 @@
 </head>
 <body>
 <#macro content>
-    <header>
-        <#include 'header.jsp'>
-    </header>
     <h1>Добавить статью:</h1>
     <form action="/addArticle" method="post">
 
@@ -30,8 +27,5 @@
     </form>
 </#macro>
 
-<footer>
-    <#include 'footer.jsp'>
-</footer>
 </body>
 </html>
